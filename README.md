@@ -9,9 +9,25 @@
 ```bash
 git clone https://github.com/LordKarim21/authorization.git
 cd authorization
+```
+
+2. Установите зависимости:
+
+```bash
 pip install -r requirements.txt
+```
+
+3. Примените миграции:
+
+```bash
 python manage.py migrate
+```
+
+4. Запустите сервер:
+
+```bash
 python manage.py runserver
+```
 
 # Сборка Docker-образа
 docker build -t my-django-app .
