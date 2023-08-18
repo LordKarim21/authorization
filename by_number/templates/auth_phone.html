@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phone Auth</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <label for="phone_number">Enter phone number:</label>
+        <input type="text" id="phone_number" name="phone_number" required pattern="^\+?[1-9]\d{1,14}$" title="Enter a valid phone number">
+        <button type="submit">Send Code</button>
+    </form>
+</body>
+</html>

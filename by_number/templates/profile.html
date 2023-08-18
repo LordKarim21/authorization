@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+</head>
+<body>
+    <h1>Profile</h1>
+    <p>Phone Number: {{ phone_number }}</p>
+    {% if invite_code %}
+        <p>Invite Code: {{ invite_code }}</p>
+    {% else %}
+        <form method="post" action="{% url 'profile' phone_number=phone_number %}">
+            {% csrf_token %}
+            <label for="invite_code">Enter Invite Code:</label>
+            <input type="text" id="invite_code" name="invite_code" required>
+            <button type="submit">Activate Invite Code</button>
+        </form>
+    {% endif %}
+</body>
+</html>

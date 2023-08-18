@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Auth Code</title>
+</head>
+<body>
+    <h3>{{ phone_number }}</h3>
+
+    <form method="post">
+        {% csrf_token %}
+        <label>Enter 4-digit code:</label>
+        <input type="text" id="code" name="code" required pattern="\d{4}" title="Enter a 4-digit code">
+        <button type="submit">Verify</button>
+    </form>
+    {% if error_message %}
+        <p class="error">{{ error_message }}</p>
+    {% endif %}
+</body>
+</html>
